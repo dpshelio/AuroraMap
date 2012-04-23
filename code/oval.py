@@ -1,3 +1,4 @@
+# converted to python from oval.pro from gi.Alaska.edu (Dirk Lummerzheim)
 from pylab import *
 
 def boundary(surface,threshold,start=0):
@@ -49,6 +50,9 @@ f0 = (f1 + f2)/2
 rf = (f2-f1)/(f2+f1)
 oval = f0*(1-rf*cos(hlon*pi/180.))*exp(-((lat-phi0)/h)**2)
 imshow(oval)
+#
+#coordinates need to be converted to Earth coordinates
+#they are right now in magnetic ones.
 
 low_boundary_w = boundary(oval[0:46,:],0.7)
 low_boundary_e = boundary(oval[45:,:],0.7,start=45)
